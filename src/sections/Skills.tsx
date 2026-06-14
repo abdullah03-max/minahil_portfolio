@@ -47,10 +47,10 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="relative mt-8 sm:mt-12 flex-1">
+        <div className="relative mt-8 sm:mt-12 flex-1 flex items-center min-h-[340px]">
           <motion.div 
             style={isMobile ? {} : { x }} 
-            className="flex overflow-x-auto sm:overflow-visible no-scrollbar h-auto sm:h-full items-center gap-6 px-6 sm:gap-8 sm:px-12"
+            className="flex overflow-x-auto sm:overflow-visible no-scrollbar h-auto items-center gap-6 px-6 sm:gap-8 sm:px-12"
           >
             {skillCategories.map((category) => {
               const Icon = getIcon(category.icon)
