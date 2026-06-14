@@ -123,12 +123,12 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 5, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5, ease: "easeInOut" }
             }}
-            className="absolute left-[12%] bottom-[20%] z-20 flex h-10 w-10 items-center justify-center rounded-xl glass glow-border text-glow-cyan shadow-lg shadow-black/20"
+            className="absolute left-[2%] top-[30%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
           >
-            <span className="font-heading text-xs font-bold">React</span>
+            <img src="/React.png" alt="React" className="w-full h-full object-contain" />
           </motion.div>
 
-          {/* JavaScript Badge */}
+          {/* JavaScript / Node Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1, y: [0, 10, 0], x: [0, -8, 0] }}
@@ -138,9 +138,9 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 4.5, ease: "easeInOut" }
             }}
-            className="absolute left-[15%] top-[20%] z-20 flex h-10 w-10 items-center justify-center rounded-xl glass glow-border shadow-lg shadow-black/20 text-[#fbbf24]"
+            className="absolute left-[18%] top-[10%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
           >
-            <span className="font-heading text-xs font-bold">JS</span>
+            <img src="/node-js.png" alt="Node.js" className="w-full h-full object-contain" />
           </motion.div>
 
           {/* Flutter Badge */}
@@ -153,9 +153,9 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 6, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 6, ease: "easeInOut" }
             }}
-            className="absolute left-[20%] bottom-[30%] z-20 flex px-3 py-1 items-center justify-center rounded-full glass glow-border text-primary-light shadow-lg shadow-black/20"
+            className="absolute left-[15%] bottom-[12%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
           >
-            <span className="font-heading text-[10px] font-bold uppercase tracking-wider">Flutter</span>
+            <img src="/flutter.png" alt="Flutter" className="w-full h-full object-contain" />
           </motion.div>
 
           {/* Firebase Badge */}
@@ -168,39 +168,24 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 5.2, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5.2, ease: "easeInOut" }
             }}
-            className="absolute left-[38%] top-[5%] z-20 flex px-2.5 py-1 items-center justify-center rounded-full glass glow-border text-[#f59e0b] shadow-lg shadow-black/20"
+            className="absolute right-[8%] top-[18%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2.5 shadow-lg shadow-black/20"
           >
-            <span className="font-heading text-[10px] font-bold uppercase tracking-wider">Firebase</span>
+            <img src="/firebase.png" alt="Firebase" className="w-full h-full object-contain" />
           </motion.div>
 
-          {/* HTML Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -10, 0], x: [0, 6, 0] }}
-            transition={{ 
-              scale: { delay: 1.0, duration: 0.5 },
-              opacity: { delay: 1.0, duration: 0.5 },
-              y: { repeat: Infinity, duration: 4.8, ease: "easeInOut" },
-              x: { repeat: Infinity, duration: 4.8, ease: "easeInOut" }
-            }}
-            className="absolute right-[5%] top-[40%] z-20 flex h-9 w-9 items-center justify-center rounded-xl glass glow-border text-white/90 shadow-lg shadow-black/20"
-          >
-            <span className="font-heading text-xs font-bold">HTML</span>
-          </motion.div>
-
-          {/* CSS Badge */}
+          {/* Supabase Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1, y: [0, 8, 0], x: [0, -5, 0] }}
             transition={{ 
-              scale: { delay: 1.1, duration: 0.5 },
-              opacity: { delay: 1.1, duration: 0.5 },
+              scale: { delay: 1.0, duration: 0.5 },
+              opacity: { delay: 1.0, duration: 0.5 },
               y: { repeat: Infinity, duration: 5.6, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5.6, ease: "easeInOut" }
             }}
-            className="absolute left-[30%] bottom-[15%] z-20 flex h-9 w-9 items-center justify-center rounded-xl glass glow-border text-white/70 shadow-lg shadow-black/20"
+            className="absolute right-[10%] bottom-[15%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
           >
-            <span className="font-heading text-xs font-bold">CSS</span>
+            <img src="/supabase.png" alt="Supabase" className="w-full h-full object-contain" />
           </motion.div>
 
           {/* 3D Avatar Image centered completely in the orbits with smooth rise entrance */}
