@@ -125,14 +125,14 @@ function SceneContents({ mouse }: { mouse: { nx: number; ny: number } }) {
   return (
     <group ref={groupRef}>
       <ambientLight intensity={0.4} />
-      <pointLight position={[5, 5, 5]} intensity={1.2} color="#60A5FA" />
-      <pointLight position={[-5, -3, -5]} intensity={1} color="#00D4FF" />
+      <pointLight position={[5, 5, 5]} intensity={1.2} color="#F59E0B" />
+      <pointLight position={[-5, -3, -5]} intensity={1} color="#fbbf24" />
 
-      <GlowSphere position={[3.2, 1.2, -2]} scale={1.4} color="#2563EB" speed={1} />
-      <GlowSphere position={[-3.4, -1.4, -3]} scale={1.9} color="#4F46E5" speed={0.7} />
-      <GlowTorus position={[-2.6, 1.8, -4]} scale={0.9} color="#00D4FF" speed={1.2} />
-      <GlowIcosahedron position={[3.6, -1.6, -3]} scale={1.1} color="#60A5FA" speed={0.9} />
-      <GlowSphere position={[0, 2.6, -5]} scale={1} color="#3B82F6" speed={1.3} />
+      <GlowSphere position={[3.2, 1.2, -2]} scale={1.4} color="#d97706" speed={1} />
+      <GlowSphere position={[-3.4, -1.4, -3]} scale={1.9} color="#b45309" speed={0.7} />
+      <GlowTorus position={[-2.6, 1.8, -4]} scale={0.9} color="#fbbf24" speed={1.2} />
+      <GlowIcosahedron position={[3.6, -1.6, -3]} scale={1.1} color="#f59e0b" speed={0.9} />
+      <GlowSphere position={[0, 2.6, -5]} scale={1} color="#d97706" speed={1.3} />
     </group>
   )
 }
