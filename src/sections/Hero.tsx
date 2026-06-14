@@ -94,15 +94,25 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Premium 3D interactive graphics */}
-        <div className="relative h-[320px] sm:h-[400px] lg:h-[550px] lg:col-span-5 flex items-center justify-center">
-          <div className="absolute inset-0 z-0">
-            <SceneBackground />
-          </div>
-          {/* Subtle overlay decorative frames to make the 3D element feel premium */}
-          <div className="absolute inset-4 rounded-3xl border border-white/5 pointer-events-none" />
-          <div className="absolute top-8 left-8 h-4 w-4 border-t-2 border-l-2 border-primary-light/40 pointer-events-none" />
-          <div className="absolute bottom-8 right-8 h-4 w-4 border-b-2 border-r-2 border-primary-light/40 pointer-events-none" />
+        {/* Right Column: Premium 3D interactive character avatar */}
+        <div className="relative h-[360px] sm:h-[420px] lg:h-[500px] lg:col-span-5 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] rounded-[40px] overflow-hidden glass glow-border flex items-center justify-center shadow-2xl shadow-primary/20"
+          >
+            <img 
+              src="/girl_developer_avatar_3d.png" 
+              alt="Minahil Yaseen 3D Developer Avatar"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+
+          {/* Floating tech background elements to emulate the dynamic 3D depth */}
+          <div className="absolute inset-4 rounded-[40px] border border-white/5 pointer-events-none" />
+          <div className="absolute top-4 left-4 h-6 w-6 border-t-2 border-l-2 border-primary-light/40 pointer-events-none" />
+          <div className="absolute bottom-4 right-4 h-6 w-6 border-b-2 border-r-2 border-primary-light/40 pointer-events-none" />
         </div>
 
       </div>
