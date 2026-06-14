@@ -145,9 +145,9 @@ export default function Hero() {
             className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] z-10 flex items-center justify-center"
           >
             <img 
-              src="/girl_coder_no_bg.png" 
+              src="/girl_coder_no_bg_new.png" 
               alt="Minahil Yaseen 3D Developer Avatar"
-              className="w-full h-full object-contain filter drop-shadow-[0_25px_25px_rgba(217,119,6,0.15)]"
+              className="w-full h-full object-contain mix-blend-screen filter drop-shadow-[0_25px_25px_rgba(217,119,6,0.15)]"
             />
           </motion.div>
         </div>
