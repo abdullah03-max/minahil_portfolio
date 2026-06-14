@@ -205,15 +205,15 @@ export default function Hero() {
 
           {/* 3D Avatar Image centered completely in the orbits with smooth rise entrance */}
           <motion.div
-            initial={{ opacity: 0, y: 200, x: "-50%", scale: 0.9 }}
+            initial={{ opacity: 0, y: 450, x: "-50%", scale: 0.8 }}
             animate={{ opacity: 1, y: "-50%", x: "-50%", scale: 1 }}
             transition={{ 
               type: "spring",
-              stiffness: 55, 
-              damping: 14,
-              delay: 0.15
+              stiffness: 45, 
+              damping: 15,
+              delay: 0.2
             }}
-            whileHover={{ y: "-55%", scale: 1.04 }}
+            whileHover={{ y: "-53%", scale: 1.03 }}
             className="absolute left-1/2 top-1/2 z-10 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px] flex items-center justify-center cursor-pointer"
           >
             <img 
