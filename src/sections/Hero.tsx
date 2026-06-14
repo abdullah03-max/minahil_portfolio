@@ -203,18 +203,18 @@ export default function Hero() {
             <span className="font-heading text-xs font-bold">CSS</span>
           </motion.div>
 
-          {/* 3D Avatar Image with smooth load slide/scale entrance */}
+          {/* 3D Avatar Image with smooth load slide/scale entrance (down to top) */}
           <motion.div
-            initial={{ opacity: 0, y: 120, scale: 0.85 }}
+            initial={{ opacity: 0, y: 180, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ 
               type: "spring",
-              stiffness: 70, 
-              damping: 15,
-              delay: 0.2
+              stiffness: 60, 
+              damping: 14,
+              delay: 0.15
             }}
-            whileHover={{ y: -8, scale: 1.02 }}
-            className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] z-10 flex items-center justify-center cursor-pointer"
+            whileHover={{ y: -10, scale: 1.03 }}
+            className="relative w-[340px] h-[380px] sm:w-[420px] sm:h-[460px] lg:w-[460px] lg:h-[500px] z-10 flex items-center justify-center cursor-pointer"
           >
             <img 
               src="/2.png" 
