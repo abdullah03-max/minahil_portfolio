@@ -112,7 +112,7 @@ export default function Hero() {
             className="absolute w-[360px] h-[360px] sm:w-[460px] sm:h-[460px] rounded-full border border-glow-cyan/15 pointer-events-none"
           />
 
-          {/* Floating technology badges around the avatar */}
+          {/* Floating technology badges positioned directly on the circular orbit paths */}
           {/* React Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -123,7 +123,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 5, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5, ease: "easeInOut" }
             }}
-            className="absolute left-[5%] top-[15%] z-20 flex h-10 w-10 items-center justify-center rounded-xl glass glow-border text-glow-cyan shadow-lg shadow-black/20"
+            className="absolute left-[12%] bottom-[20%] z-20 flex h-10 w-10 items-center justify-center rounded-xl glass glow-border text-glow-cyan shadow-lg shadow-black/20"
           >
             <span className="font-heading text-xs font-bold">React</span>
           </motion.div>
@@ -138,7 +138,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 4.5, ease: "easeInOut" }
             }}
-            className="absolute left-[0%] bottom-[25%] z-20 flex h-10 w-10 items-center justify-center rounded-xl glass glow-border shadow-lg shadow-black/20 text-[#fbbf24]"
+            className="absolute left-[15%] top-[20%] z-20 flex h-10 w-10 items-center justify-center rounded-xl glass glow-border shadow-lg shadow-black/20 text-[#fbbf24]"
           >
             <span className="font-heading text-xs font-bold">JS</span>
           </motion.div>
@@ -153,7 +153,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 6, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 6, ease: "easeInOut" }
             }}
-            className="absolute right-[5%] top-[12%] z-20 flex px-3 py-1 items-center justify-center rounded-full glass glow-border text-primary-light shadow-lg shadow-black/20"
+            className="absolute left-[20%] bottom-[30%] z-20 flex px-3 py-1 items-center justify-center rounded-full glass glow-border text-primary-light shadow-lg shadow-black/20"
           >
             <span className="font-heading text-[10px] font-bold uppercase tracking-wider">Flutter</span>
           </motion.div>
@@ -168,7 +168,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 5.2, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5.2, ease: "easeInOut" }
             }}
-            className="absolute right-[0%] bottom-[30%] z-20 flex px-2.5 py-1 items-center justify-center rounded-full glass glow-border text-[#f59e0b] shadow-lg shadow-black/20"
+            className="absolute left-[38%] top-[5%] z-20 flex px-2.5 py-1 items-center justify-center rounded-full glass glow-border text-[#f59e0b] shadow-lg shadow-black/20"
           >
             <span className="font-heading text-[10px] font-bold uppercase tracking-wider">Firebase</span>
           </motion.div>
@@ -183,7 +183,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 4.8, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 4.8, ease: "easeInOut" }
             }}
-            className="absolute left-[30%] top-[-5%] z-20 flex h-9 w-9 items-center justify-center rounded-xl glass glow-border text-white/90 shadow-lg shadow-black/20"
+            className="absolute right-[5%] top-[40%] z-20 flex h-9 w-9 items-center justify-center rounded-xl glass glow-border text-white/90 shadow-lg shadow-black/20"
           >
             <span className="font-heading text-xs font-bold">HTML</span>
           </motion.div>
@@ -198,7 +198,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 5.6, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5.6, ease: "easeInOut" }
             }}
-            className="absolute right-[35%] bottom-[-5%] z-20 flex h-9 w-9 items-center justify-center rounded-xl glass glow-border text-white/70 shadow-lg shadow-black/20"
+            className="absolute left-[30%] bottom-[15%] z-20 flex h-9 w-9 items-center justify-center rounded-xl glass glow-border text-white/70 shadow-lg shadow-black/20"
           >
             <span className="font-heading text-xs font-bold">CSS</span>
           </motion.div>
