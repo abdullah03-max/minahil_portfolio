@@ -8,7 +8,6 @@ import Skills from './sections/Skills'
 import Experience from './sections/Experience'
 import Projects from './sections/Projects'
 import Services from './sections/Services'
-import Education from './sections/Education'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 
@@ -27,7 +26,6 @@ export default function App() {
         <Experience />
         <Projects />
         <Services />
-        <Education />
         <Contact />
       </main>
       <Footer />
