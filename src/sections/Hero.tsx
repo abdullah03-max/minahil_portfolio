@@ -112,80 +112,45 @@ export default function Hero() {
             className="absolute w-[360px] h-[360px] sm:w-[460px] sm:h-[460px] rounded-full border border-glow-cyan/15 pointer-events-none"
           />
 
-          {/* Floating technology badges positioned directly on the circular orbit paths */}
-          {/* React Badge */}
+          {/* Mathematically perfect circular orbital path containing tech icons */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -12, 0], x: [0, 8, 0] }}
-            transition={{ 
-              scale: { delay: 0.6, duration: 0.5 },
-              opacity: { delay: 0.6, duration: 0.5 },
-              y: { repeat: Infinity, duration: 5, ease: "easeInOut" },
-              x: { repeat: Infinity, duration: 5, ease: "easeInOut" }
-            }}
-            className="absolute left-[-5%] top-[40%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+            className="absolute w-[360px] h-[360px] sm:w-[460px] sm:h-[460px] z-20 pointer-events-none"
           >
-            <img src="/React.png" alt="React" className="w-full h-full object-contain" />
-          </motion.div>
-
-          {/* JavaScript / Node Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1, y: [0, 10, 0], x: [0, -8, 0] }}
-            transition={{ 
-              scale: { delay: 0.7, duration: 0.5 },
-              opacity: { delay: 0.7, duration: 0.5 },
-              y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
-              x: { repeat: Infinity, duration: 4.5, ease: "easeInOut" }
-            }}
-            className="absolute left-[10%] top-[2%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
-          >
-            <img src="/node-js.png" alt="Node.js" className="w-full h-full object-contain" />
-          </motion.div>
-
-          {/* Flutter Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -15, 0], x: [0, 10, 0] }}
-            transition={{ 
-              scale: { delay: 0.8, duration: 0.5 },
-              opacity: { delay: 0.8, duration: 0.5 },
-              y: { repeat: Infinity, duration: 6, ease: "easeInOut" },
-              x: { repeat: Infinity, duration: 6, ease: "easeInOut" }
-            }}
-            className="absolute left-[12%] bottom-[5%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
-          >
-            <img src="/flutter.png" alt="Flutter" className="w-full h-full object-contain" />
-          </motion.div>
-
-          {/* Firebase Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1, y: [0, 12, 0], x: [0, -6, 0] }}
-            transition={{ 
-              scale: { delay: 0.9, duration: 0.5 },
-              opacity: { delay: 0.9, duration: 0.5 },
-              y: { repeat: Infinity, duration: 5.2, ease: "easeInOut" },
-              x: { repeat: Infinity, duration: 5.2, ease: "easeInOut" }
-            }}
-            className="absolute right-[-4%] top-[15%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2.5 shadow-lg shadow-black/20"
-          >
-            <img src="/firebase.png" alt="Firebase" className="w-full h-full object-contain" />
-          </motion.div>
-
-          {/* Supabase Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1, y: [0, 8, 0], x: [0, -5, 0] }}
-            transition={{ 
-              scale: { delay: 1.0, duration: 0.5 },
-              opacity: { delay: 1.0, duration: 0.5 },
-              y: { repeat: Infinity, duration: 5.6, ease: "easeInOut" },
-              x: { repeat: Infinity, duration: 5.6, ease: "easeInOut" }
-            }}
-            className="absolute right-[5%] bottom-[10%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
-          >
-            <img src="/supabase.png" alt="Supabase" className="w-full h-full object-contain" />
+            {/* 5 Icons equally spaced (72 degrees apart: 0, 72, 144, 216, 288) */}
+            {[
+              { src: "/React.png", alt: "React", angle: 0 },
+              { src: "/node-js.png", alt: "Node.js", angle: 72 },
+              { src: "/flutter.png", alt: "Flutter", angle: 144 },
+              { src: "/firebase.png", alt: "Firebase", angle: 216 },
+              { src: "/supabase.png", alt: "Supabase", angle: 288 }
+            ].map((icon, idx) => {
+              // Place icons perfectly on the boundary radius (e.g. 50% distance)
+              // We can use CSS transforms to rotate to the angle, translate outward, and counter-rotate
+              return (
+                <div
+                  key={icon.alt}
+                  style={{
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: `rotate(${icon.angle}deg) translate(${window.innerWidth < 640 ? 180 : 230}px) rotate(-${icon.angle}deg)`,
+                    marginLeft: "-24px",
+                    marginTop: "-24px"
+                  }}
+                  className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
+                >
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+                    className="w-full h-full flex items-center justify-center"
+                  >
+                    <img src={icon.src} alt={icon.alt} className="w-full h-full object-contain" />
+                  </motion.div>
+                </div>
+              )
+            })}
           </motion.div>
 
           {/* 3D Avatar Image centered completely in the orbits with smooth rise entrance */}
