@@ -94,25 +94,62 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Premium 3D interactive character avatar */}
-        <div className="relative h-[360px] sm:h-[420px] lg:h-[500px] lg:col-span-5 flex items-center justify-center">
+        {/* Right Column: Dynamic background-less character avatar with floating tech icons */}
+        <div className="relative h-[380px] sm:h-[440px] lg:h-[520px] lg:col-span-5 flex items-center justify-center select-none">
+          
+          {/* Orbiting Tech Lines behind the character */}
+          <div className="absolute w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] rounded-full border border-dashed border-white/5 animate-[spin_40s_linear_infinite] pointer-events-none" />
+          <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] rounded-full border border-dashed border-primary-light/5 animate-[spin_60s_linear_infinite_reverse] pointer-events-none" />
+
+          {/* Floating tech icons orbiting/floating around the character */}
+          {/* React Icon */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] rounded-[40px] overflow-hidden glass glow-border flex items-center justify-center shadow-2xl shadow-primary/20"
+            animate={{ y: [0, -12, 0], x: [0, 8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute left-4 top-12 z-20 flex h-11 w-11 items-center justify-center rounded-2xl glass glow-border text-[#fbbf24] shadow-lg shadow-black/20"
           >
-            <img 
-              src="/girl_developer_avatar_3d.png" 
-              alt="Minahil Yaseen 3D Developer Avatar"
-              className="w-full h-full object-cover"
-            />
+            <span className="font-heading text-xs font-bold text-gradient">React</span>
           </motion.div>
 
-          {/* Floating tech background elements to emulate the dynamic 3D depth */}
-          <div className="absolute inset-4 rounded-[40px] border border-white/5 pointer-events-none" />
-          <div className="absolute top-4 left-4 h-6 w-6 border-t-2 border-l-2 border-primary-light/40 pointer-events-none" />
-          <div className="absolute bottom-4 right-4 h-6 w-6 border-b-2 border-r-2 border-primary-light/40 pointer-events-none" />
+          {/* JS Icon */}
+          <motion.div
+            animate={{ y: [0, 10, 0], x: [0, -8, 0] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+            className="absolute left-6 bottom-16 z-20 flex h-10 w-10 items-center justify-center rounded-xl glass glow-border shadow-lg shadow-black/20"
+          >
+            <span className="font-heading text-xs font-bold text-primary-light">JS</span>
+          </motion.div>
+
+          {/* CSS Icon */}
+          <motion.div
+            animate={{ y: [0, -14, 0], x: [0, -6, 0] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+            className="absolute right-4 top-24 z-20 flex h-10 w-10 items-center justify-center rounded-xl glass glow-border shadow-lg shadow-black/20"
+          >
+            <span className="font-heading text-xs font-bold text-white/80">CSS</span>
+          </motion.div>
+
+          {/* Flutter/Dart Icon */}
+          <motion.div
+            animate={{ y: [0, 12, 0], x: [0, 6, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+            className="absolute right-6 bottom-24 z-20 flex h-11 w-11 items-center justify-center rounded-2xl glass glow-border shadow-lg shadow-black/20"
+          >
+            <span className="font-heading text-[10px] font-bold text-gradient">Flutter</span>
+          </motion.div>
+
+          {/* Character Image (Centered, floating gently, background-less) */}
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] z-10 flex items-center justify-center"
+          >
+            <img 
+              src="/girl_coder_no_bg.png" 
+              alt="Minahil Yaseen 3D Developer Avatar"
+              className="w-full h-full object-contain filter drop-shadow-[0_25px_25px_rgba(217,119,6,0.15)]"
+            />
+          </motion.div>
         </div>
 
       </div>
