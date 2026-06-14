@@ -38,10 +38,10 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="relative mt-8 sm:mt-12 flex-1">
+        <div className="relative mt-8 sm:mt-12 flex-1 flex items-center min-h-[420px]">
           <motion.div 
             style={isMobile ? {} : { x }} 
-            className="flex overflow-x-auto sm:overflow-visible no-scrollbar h-auto sm:h-full items-center gap-6 px-6 pb-12 sm:gap-8 sm:px-12"
+            className="flex overflow-x-auto sm:overflow-visible no-scrollbar h-auto items-center gap-6 px-6 pb-12 sm:gap-8 sm:px-12"
           >
             {projects.map((project, i) => (
               <ProjectCard key={project.title} project={project} index={i} />

@@ -50,7 +50,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
         rotateY: springY,
         transformPerspective: 1000,
       }}
-      className="glass glow-border relative flex h-[440px] w-[85vw] flex-shrink-0 flex-col overflow-hidden rounded-3xl sm:w-[360px] lg:w-[380px]"
+      className="glass glow-border relative flex h-[380px] w-[85vw] flex-shrink-0 flex-col overflow-hidden rounded-3xl sm:w-[360px] lg:w-[380px]"
     >
       {/* Cursor glow overlay */}
       <motion.div
@@ -101,27 +101,6 @@ export default function ProjectCard({ project, index }: { project: Project; inde
             </li>
           ))}
         </ul>
-
-        <div className="mt-auto flex items-center gap-2.5 pt-4">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 font-body text-[11px] font-medium text-white transition-colors hover:bg-white/10"
-          >
-            <Github size={13} />
-            Code
-          </a>
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary to-glow-violet px-3.5 py-1.5 font-body text-[11px] font-semibold text-white shadow-md shadow-primary/20 transition-transform hover:scale-105"
-          >
-            Live Demo
-            <ArrowUpRight size={13} />
-          </a>
-        </div>
       </div>
     </motion.div>
   )
