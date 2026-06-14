@@ -121,16 +121,16 @@ function HologramGlobe() {
       {/* 6. Glowing Bracket Elements Floating Near the Cyber Globe */}
       <Float speed={2} floatIntensity={1.8}>
         <group position={[-2.4, 0.6, 0.2]}>
-          <mesh>
-            <torusGeometry args={[0.3, 0.06, 8, 24, Math.PI]} rotation={[0, 0, Math.PI / 2]} />
+          <mesh rotation={[0, 0, Math.PI / 2]}>
+            <torusGeometry args={[0.3, 0.06, 8, 24, Math.PI]} />
             <meshStandardMaterial color="#fbbf24" emissive="#d97706" emissiveIntensity={0.7} />
           </mesh>
         </group>
       </Float>
       <Float speed={2.2} floatIntensity={1.6}>
         <group position={[2.4, -0.6, -0.2]}>
-          <mesh>
-            <torusGeometry args={[0.3, 0.06, 8, 24, Math.PI]} rotation={[0, 0, -Math.PI / 2]} />
+          <mesh rotation={[0, 0, -Math.PI / 2]}>
+            <torusGeometry args={[0.3, 0.06, 8, 24, Math.PI]} />
             <meshStandardMaterial color="#fbbf24" emissive="#d97706" emissiveIntensity={0.7} />
           </mesh>
         </group>
