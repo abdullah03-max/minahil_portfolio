@@ -1,108 +1,152 @@
 import { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, OrbitControls, PresentationControls } from '@react-three/drei'
+import { Float, PresentationControls } from '@react-three/drei'
 import * as THREE from 'three'
 import { useMousePosition } from '../hooks/useMousePosition'
 
 /**
- * Premium 3D tech-core node structure.
- * This displays a beautiful central abstract core with orbiting rings, floating shards,
- * and glowing connections, creating a premium high-tech look.
+ * 3D Developer Workbench Model
+ * Renders a stylized 3D desktop/editor viewport representing full-stack code and mobile building:
+ * - A glowing 3D floating laptop/screen panel displaying active code (glowing grid/code lines).
+ * - A floating smartphone model on the side representing mobile/app engineering (Flutter/Dart).
+ * - Floating code blocks, brackets, and glowing tags representing full-stack software development.
  */
-function TechCore() {
-  const coreRef = useRef<THREE.Mesh>(null)
-  const ring1Ref = useRef<THREE.Mesh>(null)
-  const ring2Ref = useRef<THREE.Mesh>(null)
+function DeveloperWorkbench() {
   const groupRef = useRef<THREE.Group>(null)
+  const screenRef = useRef<THREE.Mesh>(null)
+  const phoneRef = useRef<THREE.Mesh>(null)
+  const bracketLRef = useRef<THREE.Mesh>(null)
+  const bracketRRef = useRef<THREE.Mesh>(null)
 
   useFrame((state) => {
     const elapsed = state.clock.getElapsedTime()
-    
-    // Core rotations
-    if (coreRef.current) {
-      coreRef.current.rotation.y = elapsed * 0.3
-      coreRef.current.rotation.x = elapsed * 0.15
-    }
 
-    // Opposite spinning outer rings
-    if (ring1Ref.current) {
-      ring1Ref.current.rotation.x = elapsed * 0.2
-      ring1Ref.current.rotation.y = elapsed * 0.4
-    }
-    if (ring2Ref.current) {
-      ring2Ref.current.rotation.y = -elapsed * 0.3
-      ring2Ref.current.rotation.z = elapsed * 0.2
-    }
-
-    // Hover floating
+    // Smooth overall floating movement
     if (groupRef.current) {
-      groupRef.current.position.y = Math.sin(elapsed * 1.5) * 0.15
+      groupRef.current.position.y = Math.sin(elapsed * 1.2) * 0.15
+      groupRef.current.rotation.y = Math.sin(elapsed * 0.4) * 0.05
+    }
+
+    // Individual subtle rotations for developer parts
+    if (screenRef.current) {
+      screenRef.current.rotation.y = Math.sin(elapsed * 0.8) * 0.03
+    }
+    if (phoneRef.current) {
+      phoneRef.current.rotation.x = Math.cos(elapsed * 1.0) * 0.05
+      phoneRef.current.rotation.y = Math.sin(elapsed * 1.2) * 0.08
+    }
+
+    // Floating brackets rotations
+    if (bracketLRef.current) {
+      bracketLRef.current.position.y = Math.sin(elapsed * 1.5) * 0.1
+      bracketLRef.current.rotation.y = elapsed * 0.1
+    }
+    if (bracketRRef.current) {
+      bracketRRef.current.position.y = Math.cos(elapsed * 1.5) * 0.1
+      bracketRRef.current.rotation.y = -elapsed * 0.1
     }
   })
 
   return (
-    <group ref={groupRef}>
-      {/* 1. Core Sphere (Glow glass with metallic wireframe look) */}
-      <mesh ref={coreRef}>
-        <icosahedronGeometry args={[1.4, 1]} />
+    <group ref={groupRef} position={[0, -0.2, 0]}>
+      {/* 1. Laptop / Monitor Screen Panel (Representing Web/Frontend/Backend) */}
+      <mesh ref={screenRef} position={[-0.4, 0, 0]}>
+        <boxGeometry args={[3.2, 2.0, 0.12]} />
         <meshStandardMaterial
-          color="#d97706"
-          emissive="#fbbf24"
-          emissiveIntensity={0.6}
-          roughness={0.1}
-          metalness={0.9}
-          wireframe
-        />
-      </mesh>
-
-      {/* Solid inner core glowing ball */}
-      <mesh>
-        <sphereGeometry args={[0.7, 32, 32]} />
-        <meshBasicMaterial color="#fbbf24" />
-      </mesh>
-
-      {/* 2. Outer Ring 1 */}
-      <mesh ref={ring1Ref} rotation={[Math.PI / 4, 0, 0]}>
-        <torusGeometry args={[2.2, 0.08, 16, 100]} />
-        <meshStandardMaterial
-          color="#d97706"
-          emissive="#b45309"
+          color="#1a1a1e"
           roughness={0.2}
           metalness={0.8}
         />
-      </mesh>
-
-      {/* 3. Outer Ring 2 */}
-      <mesh ref={ring2Ref} rotation={[0, -Math.PI / 4, 0]}>
-        <torusGeometry args={[2.6, 0.05, 16, 100]} />
-        <meshStandardMaterial
-          color="#fbbf24"
-          emissive="#f59e0b"
-          roughness={0.1}
-          metalness={0.9}
-        />
-      </mesh>
-
-      {/* 4. Small Orbiting Satellites / Tech Nodes */}
-      {Array.from({ length: 5 }).map((_, i) => {
-        const angle = (i / 5) * Math.PI * 2
-        const radius = 3.2
-        const x = Math.cos(angle) * radius
-        const z = Math.sin(angle) * radius
-        return (
-          <Float key={i} speed={2} floatIntensity={1.5}>
-            <mesh position={[x, (i % 2 === 0 ? 0.6 : -0.6), z]}>
-              <octahedronGeometry args={[0.22, 0]} />
-              <meshStandardMaterial
-                color="#fbbf24"
-                emissive="#d97706"
-                roughness={0.1}
-                metalness={0.95}
-              />
+        
+        {/* Glow Screen Surface displaying mockup lines of code */}
+        <mesh position={[0, 0, 0.07]}>
+          <planeGeometry args={[3.0, 1.8]} />
+          <meshStandardMaterial
+            color="#2e2518"
+            emissive="#fbbf24"
+            emissiveIntensity={0.25}
+            roughness={0.1}
+          />
+          
+          {/* Decorative code mockup bars */}
+          {Array.from({ length: 6 }).map((_, i) => (
+            <mesh key={i} position={[-0.8 + (i % 2 === 0 ? 0.2 : 0), 0.5 - i * 0.22, 0.01]}>
+              <boxGeometry args={[1.2 + (i % 3 === 0 ? 0.4 : -0.2), 0.08, 0.01]} />
+              <meshBasicMaterial color={i % 2 === 0 ? '#fbbf24' : '#d97706'} />
             </mesh>
-          </Float>
-        )
-      })}
+          ))}
+          <mesh position={[0.9, -0.4, 0.01]}>
+            <sphereGeometry args={[0.25, 16, 16]} />
+            <meshBasicMaterial color="#fbbf24" />
+          </mesh>
+        </mesh>
+
+        {/* Laptop Stand Base */}
+        <mesh position={[0, -1.15, -0.4]} rotation={[Math.PI / 2.2, 0, 0]}>
+          <boxGeometry args={[1.0, 0.8, 0.08]} />
+          <meshStandardMaterial color="#1a1a1e" roughness={0.3} metalness={0.8} />
+        </mesh>
+        <mesh position={[0, -1.0, -0.1]}>
+          <cylinderGeometry args={[0.15, 0.15, 0.4]} />
+          <meshStandardMaterial color="#1a1a1e" roughness={0.3} metalness={0.8} />
+        </mesh>
+      </mesh>
+
+      {/* 2. Floating smartphone on the side (Representing Mobile Development / Flutter) */}
+      <group ref={phoneRef} position={[1.8, -0.4, 1]}>
+        <mesh>
+          <boxGeometry args={[0.9, 1.8, 0.1]} />
+          <meshStandardMaterial color="#121214" roughness={0.1} metalness={0.9} />
+        </mesh>
+        {/* Glow Phone Screen */}
+        <mesh position={[0, 0, 0.06]}>
+          <planeGeometry args={[0.8, 1.7]} />
+          <meshStandardMaterial
+            color="#d97706"
+            emissive="#fbbf24"
+            emissiveIntensity={0.35}
+            roughness={0.1}
+          />
+        </mesh>
+        {/* Phone Button indicator */}
+        <mesh position={[0, -0.75, 0.08]}>
+          <cylinderGeometry args={[0.05, 0.05, 0.02]} rotation={[Math.PI / 2, 0, 0]} />
+          <meshBasicMaterial color="#ffffff" />
+        </mesh>
+      </group>
+
+      {/* 3. Floating 3D Code Brackets "{ }" */}
+      {/* Left Bracket */}
+      <group ref={bracketLRef} position={[-2.4, 0.6, 0.5]}>
+        <mesh>
+          <torusGeometry args={[0.4, 0.08, 8, 24, Math.PI]} rotation={[0, 0, Math.PI / 2]} />
+          <meshStandardMaterial color="#fbbf24" emissive="#d97706" emissiveIntensity={0.5} />
+        </mesh>
+        <mesh position={[0, 0.4, 0]}>
+          <boxGeometry args={[0.08, 0.4, 0.08]} />
+          <meshStandardMaterial color="#fbbf24" />
+        </mesh>
+        <mesh position={[0, -0.4, 0]}>
+          <boxGeometry args={[0.08, 0.4, 0.08]} />
+          <meshStandardMaterial color="#fbbf24" />
+        </mesh>
+      </group>
+
+      {/* Right Bracket */}
+      <group ref={bracketRRef} position={[2.5, 0.8, -0.5]}>
+        <mesh>
+          <torusGeometry args={[0.4, 0.08, 8, 24, Math.PI]} rotation={[0, 0, -Math.PI / 2]} />
+          <meshStandardMaterial color="#fbbf24" emissive="#d97706" emissiveIntensity={0.5} />
+        </mesh>
+        <mesh position={[0, 0.4, 0]}>
+          <boxGeometry args={[0.08, 0.4, 0.08]} />
+          <meshStandardMaterial color="#fbbf24" />
+        </mesh>
+        <mesh position={[0, -0.4, 0]}>
+          <boxGeometry args={[0.08, 0.4, 0.08]} />
+          <meshStandardMaterial color="#fbbf24" />
+        </mesh>
+      </group>
     </group>
   )
 }
@@ -112,29 +156,27 @@ function SceneContents({ mouse }: { mouse: { nx: number; ny: number } }) {
 
   useFrame(() => {
     if (!groupRef.current) return
-    // Dynamic mouse parallax effect
-    groupRef.current.rotation.y += (mouse.nx * 0.35 - groupRef.current.rotation.y) * 0.05
-    groupRef.current.rotation.x += (-mouse.ny * 0.25 - groupRef.current.rotation.x) * 0.05
+    groupRef.current.rotation.y += (mouse.nx * 0.25 - groupRef.current.rotation.y) * 0.05
+    groupRef.current.rotation.x += (-mouse.ny * 0.15 - groupRef.current.rotation.x) * 0.05
   })
 
   return (
     <group ref={groupRef}>
-      {/* Premium studio lighting */}
-      <ambientLight intensity={0.5} />
-      <pointLight position={[6, 6, 6]} intensity={2} color="#fbbf24" />
+      {/* Studio developer lighting */}
+      <ambientLight intensity={0.6} />
+      <pointLight position={[6, 8, 6]} intensity={2.5} color="#fbbf24" />
       <pointLight position={[-6, -4, -6]} intensity={1.5} color="#d97706" />
-      <directionalLight position={[0, 5, 0]} intensity={1} color="#ffffff" />
+      <directionalLight position={[0, 6, 2]} intensity={1.2} color="#ffffff" />
 
-      {/* Detailed center TechCore */}
       <PresentationControls
         global
-        config={{ mass: 2, tension: 500 }}
-        snap={{ mass: 4, tension: 150 }}
-        rotation={[0, 0, 0]}
-        polar={[-Math.PI / 3, Math.PI / 3]}
-        azimuth={[-Math.PI / 1.5, Math.PI / 1.5]}
+        config={{ mass: 1.5, tension: 400 }}
+        snap={{ mass: 3, tension: 150 }}
+        rotation={[0.1, 0.4, 0]}
+        polar={[-Math.PI / 4, Math.PI / 4]}
+        azimuth={[-Math.PI / 2, Math.PI / 2]}
       >
-        <TechCore />
+        <DeveloperWorkbench />
       </PresentationControls>
     </group>
   )
@@ -152,7 +194,7 @@ export default function SceneBackground({ dim = false }: { dim?: boolean }) {
     >
       <Canvas
         dpr={dpr}
-        camera={{ position: [0, 0, 7.5], fov: 45 }}
+        camera={{ position: [0, 0, 7.5], fov: 42 }}
         gl={{ antialias: true, alpha: true }}
       >
         <SceneContents mouse={mouse} />
