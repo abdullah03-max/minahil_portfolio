@@ -217,7 +217,7 @@ export default function Hero() {
             className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] z-10 flex items-center justify-center cursor-pointer"
           >
             <img 
-              src="/girl_developer_transparent.png" 
+              src="/2.png" 
               alt="Minahil Yaseen 3D Developer Avatar"
               className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(217,119,6,0.25)]"
             />
