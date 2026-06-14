@@ -123,7 +123,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 5, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5, ease: "easeInOut" }
             }}
-            className="absolute left-[2%] top-[30%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
+            className="absolute left-[-5%] top-[40%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
           >
             <img src="/React.png" alt="React" className="w-full h-full object-contain" />
           </motion.div>
@@ -138,7 +138,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 4.5, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 4.5, ease: "easeInOut" }
             }}
-            className="absolute left-[18%] top-[10%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
+            className="absolute left-[10%] top-[2%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
           >
             <img src="/node-js.png" alt="Node.js" className="w-full h-full object-contain" />
           </motion.div>
@@ -153,7 +153,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 6, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 6, ease: "easeInOut" }
             }}
-            className="absolute left-[15%] bottom-[12%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
+            className="absolute left-[12%] bottom-[5%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
           >
             <img src="/flutter.png" alt="Flutter" className="w-full h-full object-contain" />
           </motion.div>
@@ -168,7 +168,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 5.2, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5.2, ease: "easeInOut" }
             }}
-            className="absolute right-[8%] top-[18%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2.5 shadow-lg shadow-black/20"
+            className="absolute right-[-4%] top-[15%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2.5 shadow-lg shadow-black/20"
           >
             <img src="/firebase.png" alt="Firebase" className="w-full h-full object-contain" />
           </motion.div>
@@ -183,7 +183,7 @@ export default function Hero() {
               y: { repeat: Infinity, duration: 5.6, ease: "easeInOut" },
               x: { repeat: Infinity, duration: 5.6, ease: "easeInOut" }
             }}
-            className="absolute right-[10%] bottom-[15%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
+            className="absolute right-[5%] bottom-[10%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl glass glow-border p-2 shadow-lg shadow-black/20"
           >
             <img src="/supabase.png" alt="Supabase" className="w-full h-full object-contain" />
           </motion.div>
