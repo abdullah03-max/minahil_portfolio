@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --bg-deep: #09090b;
-  --bg-base: #121214;
-  --bg-panel: #1a1a1e;
+  --bg-deep: #080605;
+  --bg-base: #0d0b09;
+  --bg-panel: #14110e;
   --primary: #d97706;
   --primary-light: #f59e0b;
   --primary-lighter: #fbbf24;
@@ -87,8 +87,8 @@ textarea:focus-visible {
 .glass-strong {
   background: linear-gradient(
     180deg,
-    rgba(26, 26, 30, 0.85),
-    rgba(18, 18, 20, 0.85)
+    rgba(20, 17, 14, 0.85),
+    rgba(13, 11, 9, 0.85)
   );
   border: 1px solid rgba(251, 191, 36, 0.15);
   backdrop-filter: blur(24px);
