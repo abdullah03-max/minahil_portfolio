@@ -126,21 +126,21 @@ export default function Projects() {
               <motion.div
                 layoutId={`card-container-${selectedProject.title}`}
                 onClick={(e) => e.stopPropagation()}
-                className="glass glow-border relative my-auto flex w-full max-w-2xl flex-col overflow-hidden rounded-3xl bg-bg-panel shadow-2xl"
+                className="glass glow-border relative my-auto flex w-full max-w-lg flex-col overflow-hidden rounded-3xl bg-bg-panel shadow-2xl"
                 transition={{ type: 'spring', stiffness: 220, damping: 25 }}
               >
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur transition-transform hover:scale-105 active:scale-95"
+                  className="absolute right-4 top-4 z-50 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur transition-transform hover:scale-105 active:scale-95"
                 >
-                  <X size={18} />
+                  <X size={15} />
                 </button>
 
                 {/* Main image / banner */}
                 <motion.div
                   layoutId={`card-image-${selectedProject.title}`}
-                  className="relative h-48 w-full flex-shrink-0 overflow-hidden sm:h-56"
+                  className="relative h-40 w-full flex-shrink-0 overflow-hidden sm:h-48"
                 >
                   <img
                     src={selectedProject.image}
@@ -151,17 +151,17 @@ export default function Projects() {
                 </motion.div>
 
                 {/* Details layout */}
-                <div className="flex-1 p-6 sm:p-8">
+                <div className="flex-1 p-5 sm:p-6">
                   <motion.h3
                     layoutId={`card-title-${selectedProject.title}`}
-                    className="font-heading text-xl font-bold text-white sm:text-2xl"
+                    className="font-heading text-lg font-bold text-white sm:text-xl"
                   >
                     {selectedProject.title}
                   </motion.h3>
 
                   <motion.p
                     layoutId={`card-description-${selectedProject.title}`}
-                    className="mt-3 font-body text-sm leading-relaxed text-ink-muted sm:text-base"
+                    className="mt-2.5 font-body text-[13px] leading-relaxed text-ink-muted"
                   >
                     {selectedProject.description}
                   </motion.p>
