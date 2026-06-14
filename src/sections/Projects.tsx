@@ -125,10 +125,10 @@ export default function Projects() {
             />
 
             {/* Centered expanded card container */}
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 overflow-y-auto">
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
               <motion.div
                 layoutId={`card-container-${selectedProject.title}`}
-                className="glass glow-border relative my-auto flex w-full max-w-3xl flex-col overflow-hidden rounded-3xl bg-bg-panel shadow-2xl"
+                className="glass glow-border relative my-auto flex w-full max-w-2xl max-h-[85vh] flex-col overflow-y-auto rounded-3xl bg-bg-panel shadow-2xl no-scrollbar"
                 transition={{ type: 'spring', stiffness: 220, damping: 25 }}
               >
                 {/* Close Button */}
@@ -142,7 +142,7 @@ export default function Projects() {
                 {/* Main image / banner */}
                 <motion.div
                   layoutId={`card-image-${selectedProject.title}`}
-                  className="relative h-60 w-full overflow-hidden sm:h-72"
+                  className="relative h-48 w-full flex-shrink-0 overflow-hidden sm:h-56"
                 >
                   <img
                     src={selectedProject.image}
@@ -153,10 +153,10 @@ export default function Projects() {
                 </motion.div>
 
                 {/* Details layout */}
-                <div className="flex-1 overflow-y-auto p-6 sm:p-8 no-scrollbar max-h-[50vh]">
+                <div className="flex-1 p-6 sm:p-8">
                   <motion.h3
                     layoutId={`card-title-${selectedProject.title}`}
-                    className="font-heading text-2xl font-bold text-white sm:text-3xl"
+                    className="font-heading text-xl font-bold text-white sm:text-2xl"
                   >
                     {selectedProject.title}
                   </motion.h3>
