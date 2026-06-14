@@ -115,20 +115,18 @@ export default function Projects() {
       <AnimatePresence>
         {selectedProject && (
           <>
-            {/* Dark backdrop blur */}
-            <motion.div
+            {/* Centered expanded card container (backdrop & scroll wrapper) */}
+            <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
-              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md"
-            />
-
-            {/* Centered expanded card container */}
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+              className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex justify-center py-10 px-4 sm:px-6 md:px-10"
+            >
               <motion.div
                 layoutId={`card-container-${selectedProject.title}`}
-                className="glass glow-border relative my-auto flex w-full max-w-2xl max-h-[85vh] flex-col overflow-y-auto rounded-3xl bg-bg-panel shadow-2xl no-scrollbar"
+                onClick={(e) => e.stopPropagation()}
+                className="glass glow-border relative my-auto flex w-full max-w-2xl flex-col overflow-hidden rounded-3xl bg-bg-panel shadow-2xl"
                 transition={{ type: 'spring', stiffness: 220, damping: 25 }}
               >
                 {/* Close Button */}
