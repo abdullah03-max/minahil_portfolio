@@ -203,23 +203,23 @@ export default function Hero() {
             <span className="font-heading text-xs font-bold">CSS</span>
           </motion.div>
 
-          {/* 3D Avatar Image with smooth load slide/scale entrance (down to top) */}
+          {/* 3D Avatar Image centered completely in the orbits with smooth rise entrance */}
           <motion.div
-            initial={{ opacity: 0, y: 180, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
+            initial={{ opacity: 0, y: 200, x: "-50%", scale: 0.9 }}
+            animate={{ opacity: 1, y: "-50%", x: "-50%", scale: 1 }}
             transition={{ 
               type: "spring",
-              stiffness: 60, 
+              stiffness: 55, 
               damping: 14,
               delay: 0.15
             }}
-            whileHover={{ y: -10, scale: 1.03 }}
-            className="relative w-[340px] h-[380px] sm:w-[420px] sm:h-[460px] lg:w-[460px] lg:h-[500px] z-10 flex items-center justify-center cursor-pointer"
+            whileHover={{ y: "-55%", scale: 1.04 }}
+            className="absolute left-1/2 top-1/2 z-10 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px] flex items-center justify-center cursor-pointer"
           >
             <img 
               src="/2.png" 
               alt="Minahil Yaseen 3D Developer Avatar"
-              className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(217,119,6,0.25)]"
+              className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(217,119,6,0.3)]"
             />
           </motion.div>
         </div>
